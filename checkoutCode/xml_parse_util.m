@@ -1,0 +1,1 @@
+function xml_parse_util(xmlfile)%% Function to parse xml files.%% Anthony L. Daniell - 31 March 2017%xmlfile[fid, msg] = fopen (xmlfile, "rt")# Do the actual I/O here…   data = fgetl(fid) fclose (fid);%% End of script%
