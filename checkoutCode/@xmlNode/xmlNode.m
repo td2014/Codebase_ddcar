@@ -1,0 +1,1 @@
+%% Define a class for keeping the document nodes%xmlNode = struct ("tagHeader", "",                   "tagName", "",                  "depth", 0,                  "attributeArray", [],                  "childArray", [] )                  %% End of class definition%
