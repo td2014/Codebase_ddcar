@@ -8,7 +8,8 @@ function run_demoVelodyne (base_dir,calib_dir)
 % calib_dir ... absolute path to directory that contains calibration files
 
 % clear and close everything
-close all; dbstop error; clc;
+% close all; dbstop error; clc;
+close all; clc;
 disp('======= KITTI DevKit Demo =======');
 
 % options (modify this to select your sequence)
@@ -19,7 +20,7 @@ if nargin<2
   calib_dir = '/mnt/karlsruhe_dataset/2011_09_26';
 end
 cam       = 2; % 0-based index
-frame     = 0; % 0-based index
+frame     = 5; % 0-based index
 
 % load calibration
 calib = loadCalibrationCamToCam(fullfile(calib_dir,'calib_cam_to_cam.txt'));
