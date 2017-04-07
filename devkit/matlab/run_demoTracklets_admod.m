@@ -48,7 +48,7 @@ end
 if nargin<2
   calib_dir = '/media/data/kitti/2012_raw_data_extract/2011_09_26';
 end
-cam = 2; % 0-based index
+cam = 0; % 0-based index
 
 % get image sub-directory
 image_dir = fullfile(base_dir, sprintf('/image_%02d/data', cam));
@@ -63,7 +63,8 @@ gh = visualization('init',image_dir);
 [veloToCam, K] = loadCalibration(calib_dir);
 
 % read tracklets for the selected sequence
-tracklets = readTracklets([base_dir '/tracklet_labels.xml']); % slow version
+tracklets = [];
+%%%tracklets = readTracklets([base_dir '/tracklet_labels.xml']); % slow version
 %tracklets = readTrackletsMex([base_dir '/tracklet_labels.xml']); % fast version
 
 % extract tracklets
@@ -100,7 +101,7 @@ img_idx = 0;
 while 1
   
   % visualization update for next frame
-  visualization('update',image_dir,gh,img_idx,nimages);
+  visualization_admod('update',image_dir,gh,img_idx,nimages);
   
   % compute bounding boxes for visible tracklets
   for it = 1:numel(tracklets)
