@@ -3,6 +3,8 @@ RUN apt-get -y update
 RUN apt-get install -y vim
 RUN apt-get install -y ros-kinetic-ros-tutorials
 RUN apt-get install -y ros-kinetic-rqt-common-plugins
+RUN apt-get install -y ros-kinetic-diagnostics
+RUN apt-get install -y libpcap0.8-dev
 # The basics
 RUN apt-get install -q -y \
         wget \
